@@ -2,6 +2,8 @@ import React from "react";
 
 export default function Store(props) {
   const imageSource = `https://dummyimage.com/420x260/${props.item.imageColor}/${props.item.imageColor}`;
+  const { addToBasket, currencyConverter } = props;
+
   return (
     <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
       <div className="block relative h-48 rounded overflow-hidden">
@@ -19,9 +21,14 @@ export default function Store(props) {
           <h2 className="text-gray-900 title-font text-lg font-medium">
             {props.item.name}
           </h2>
-          <p className="mt-1">{props.item.priceCents}</p>
+          <p className="mt-1">
+            {currencyConverter(props.item.priceCents / 100)}
+          </p>
         </div>
-        <button className="text-white py-2 px-4 text-xl bg-blue-500 rounded hover:bg-blue-700">
+        <button
+          className="text-white py-2 px-4 text-xl bg-blue-500 rounded hover:bg-blue-700"
+          onClick={() => addToBasket(props.item)}
+        >
           Add To Cart
         </button>
       </div>
