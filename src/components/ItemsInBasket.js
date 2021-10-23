@@ -6,6 +6,7 @@ export default function ItemsInBasket({
   basketItems,
   setBasket,
   currencyConverter,
+  setShowHide,
 }) {
   const source = `https://dummyimage.com/210x130/${item.imageColor}/${item.imageColor}`;
 
@@ -21,6 +22,10 @@ export default function ItemsInBasket({
     const newBasket = [...basketItems];
     const basket = newBasket.filter((items) => items.id !== id);
     setBasket([...basket]);
+
+    if (basketItems.length === 1) {
+      setShowHide("mb-4 top-0 right-0 mr-4 mt-20 fixed invisible");
+    }
   }
 
   return (

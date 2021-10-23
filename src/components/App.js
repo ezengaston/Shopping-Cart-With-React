@@ -49,6 +49,7 @@ function App() {
             basketItems={basketItems}
             setBasket={setBasket}
             currencyConverter={currencyConverter}
+            setShowHide={setShowHide}
           />
         );
       });

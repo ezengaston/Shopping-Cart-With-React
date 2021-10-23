@@ -10,7 +10,7 @@ export default function Button({ showHideCart, basketItems }) {
   }
 
   function hideShowBasket() {
-    if (basketItems == null) {
+    if (basketItems == null || basketItems.length === 0) {
       return "fixed top-0 right-0 mr-4 mt-4 w-12 bg-blue-500 p-2 rounded-full text-white hover:bg-blue-700 invisible";
     } else {
       return "fixed top-0 right-0 mr-4 mt-4 w-12 bg-blue-500 p-2 rounded-full text-white hover:bg-blue-700";
